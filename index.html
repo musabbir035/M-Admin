@@ -1,0 +1,196 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/m-admin.css">
+    <link rel="stylesheet" href="css/m-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand bg-gradient-primary">
+        <div class="container-fluid">
+            <a href="#" class="nav-link" id="sidebarToggler">
+                <i class="mi-menu"></i>
+            </a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-lg-0">
+                    <li class="nav-item notification-sm me-3">
+                        <a href="/notification.html" class="nav-link notification-bell circle">
+                            <i class="mi-bell"></i>
+                            <span class="badge bg-danger" id="notificationCountBadge">2</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown notification-md me-3">
+                        <a class="nav-link notification-bell circle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="mi-bell"></i>
+                            <span class="badge bg-danger">2</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end notification-dropdown" aria-labelledby="navbarDropdown">
+                            <div class="notification-dropdown-header">
+                                <span class="notification-count">2 new notifications</span>
+                                <a href="/notification.html" class="text-decoration-none">See all</a>
+                            </div>
+                            <div class="notification-dropdown-body">
+                                <a href="" class="notification-dropdown-item active">
+                                    <span class="notification-text">
+                                        John Doe liked your comment: Lorem ipsum dolor sit amet...
+                                    </span>
+                                    <span class="notification-time">
+                                        1 hour ago
+                                    </span>
+                                </a>
+                                <a href="" class="notification-dropdown-item">
+                                    <span class="notification-text">
+                                        John Doe liked your comment: Lorem ipsum dolor sit amet...
+                                    </span>
+                                    <span class="notification-time">
+                                        1 hour ago
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown me-3">
+                        <a class="nav-link circle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="mi-user"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Account</a></li>
+                            <li><a class="dropdown-item" href="#">Log out</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <aside class="main-menu">
+        <div class="main-menu-header">
+            <span>C-Admin</span>
+            <a href="#" id="sidebarClose"><i class="mi-close"></i></a>
+        </div>
+        <ul class="main-menu-contents">
+            <li class="main-menu-item">
+                <a href="#" class="nav-link active">
+                    <span>
+                        <i class="mi-dashboard"></i>
+                        Dashboard
+                    </span>
+                </a>
+            </li>
+            <li class="main-menu-item">
+                <a href="#" class="nav-link">
+                    <span>
+                        <i class="mi-users"></i>
+                        Users
+                    </span>
+                </a>
+            </li>
+            <li class="main-menu-item">
+                <a href="#" class="nav-link has-dropdown">
+                    <span>
+                        <i class="mi-user-tie"></i>
+                        Employees
+                    </span>
+                    <i class="mi-chevron-down right"></i>
+                </a>
+                <ul class="main-menu-sub">
+                    <li class="main-menu-item">
+                        <a href="#" class="nav-link">
+                            All employees
+                        </a>
+                    </li>
+                    <li class="main-menu-item">
+                        <a href="#" class="nav-link">
+                            Add employee
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="main-menu-item">
+                <a href="#" class="nav-link has-dropdown">
+                    <span>
+                        <i class="mi-client"></i>
+                        Clients
+                    </span>
+                    <i class="mi-chevron-down right"></i>
+                </a>
+                <ul class="main-menu-sub">
+                    <li class="main-menu-item">
+                        <a href="#" class="nav-link">
+                            All clients
+                        </a>
+                    </li>
+                    <li class="main-menu-item">
+                        <a href="#" class="nav-link">
+                            Add client
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="main-menu-item">
+                <a href="#" class="nav-link">
+                    <span>
+                        <i class="mi-boxes"></i>
+                        Inventory
+                    </span>
+                </a>
+            </li>
+            <li class="main-menu-item">
+                <a href="#" class="nav-link">
+                    <span>
+                        <i class="mi-calculator"></i>
+                        Accounts
+                    </span>
+                </a>
+            </li>
+            <li class="main-menu-item">
+                <a href="#" class="nav-link">
+                    <span>
+                        <i class="mi-calendar"></i>
+                        Calendar
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </aside>
+
+    <div class="main-content">
+    </div>
+
+<script src="js/bootstrap.min.js"></script>
+<script>
+    let sidebarToggler = document.querySelector('#sidebarToggler');
+    let body = document.querySelector('body');
+    sidebarToggler.addEventListener('click', function() {
+        if(body.classList.contains('main-menu-close')) {
+            body.classList.remove('main-menu-close');
+            body.classList.add('main-menu-open');
+        }
+        else {
+            body.classList.remove('main-menu-open');
+            body.classList.add('main-menu-close');
+        }
+    });
+
+    let mainMenuDropdownToggle = document.querySelectorAll('.has-dropdown');
+    for(let v = 0; v < mainMenuDropdownToggle.length; v++) {
+        mainMenuDropdownToggle[v].addEventListener('click', function() {
+            if(this.classList.contains('open')) {
+                this.classList.remove('open');
+                this.classList.add('close');
+            }
+            else {
+                this.classList.remove('close');
+                this.classList.add('open');
+            }
+        });
+    }
+    
+</script>
+</body>
+</html>
